@@ -14,14 +14,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/spotify_black"
         tools:context=".MainActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+            android:background="@color/spotify_green_dark"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30sp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:text="Welcome to Moodify"
+            tools:ignore="MissingConstraints"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="50dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="Go to settings to your right to perform your first search!\n\n\n\nGo to preferences to your left to set what to search by!"
+            android:gravity="center"
+            />
+
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -54,7 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:background="@color/white"
+        android:background="@color/spotify_green"
         android:text="@string/settings_drawer">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/settings"
