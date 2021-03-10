@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicRecommendationApp">
-        <activity android:name=".MainActivity">
+        <!--<activity
+            android:name="com.example.android.sqliteweather.SettingsActivity"
+            android:parentActivityName="com.example.android.sqliteweather.MainActivity" />-->
+        <activity
+            android:name="com.example.musicrecommendationapp.MainActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.MusicRecommendationApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

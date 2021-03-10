@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Music Recommendation App</string>
+
+    <string name="settings_drawer">Settings</string>
 </resources>
