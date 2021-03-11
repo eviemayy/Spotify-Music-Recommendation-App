@@ -2,17 +2,13 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <EditTextPreference
-        android:key="@string/pref_song_name"
-        android:title="@string/pref_song_title" />
-
-    <EditTextPreference
-        android:key="@string/pref_artist_name"
-        android:title="@string/pref_artist_title" />
-
-    <EditTextPreference
-        android:key="@string/pref_album_name"
-        android:title="@string/pref_album_title" />
+    <ListPreference
+        android:key="@string/pref_mood_key"
+        android:title="@string/pref_mood_title"
+        android:dialogTitle="@string/pref_mood_title"
+        android:entryValues="@array/pref_mood"
+        android:entries="@array/pref_mood"
+        app:useSimpleSummaryProvider="true" />
 
 
 </PreferenceScreen>

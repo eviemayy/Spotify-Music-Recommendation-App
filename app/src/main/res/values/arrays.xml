@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_mood">
+        <item>@string/pref_mood_sad</item>
+        <item>@string/pref_mood_happy</item>
+        <item>@string/pref_mood_study</item>
+        <item>@string/pref_mood_workout</item>
+        <item>@string/pref_mood_calm</item>
+        <item>@string/pref_mood_angry</item>
+        <item>@string/pref_mood_love</item>
+    </string-array>
+</resources>
