@@ -6,4 +6,10 @@
     <string name="nav_artist_name">Artist Name</string>
     <string name="nav_album_name">Album Name</string>
     <string name="action_settings_title">Settings</string>
+    <string name="pref_song_name">Song Name</string>
+    <string name="pref_song_title">Song Title</string>
+    <string name="pref_artist_name">Artist Name</string>
+    <string name="pref_artist_title">Artist Title</string>
+    <string name="pref_album_name">Album Name</string>
+    <string name="pref_album_title">Album Title</string>
 </resources>

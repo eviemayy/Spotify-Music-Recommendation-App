@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ProgressBar loadingIndicatorPB;
     private TextView errorMessageTV;
     private DrawerLayout drawerLayout;
+    private View settingsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.errorMessageTV = findViewById(R.id.tv_error_message);
 
         this.drawerLayout = findViewById(R.id.drawer_layout);
+        this.settingsButton = findViewById(R.id.action_settings);
 
         NavigationView navigationView = findViewById(R.id.nv_nav_drawer);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
@@ -47,6 +50,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
