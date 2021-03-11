@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -37,7 +40,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nv_nav_drawer);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
     }
+
 
 
     @Override
@@ -52,6 +60,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             default:
                 return false;
+        }
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 

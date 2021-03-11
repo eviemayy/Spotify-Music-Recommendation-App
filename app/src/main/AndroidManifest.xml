@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.musicrecommendationapp">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicRecommendationApp">
-        <!--<activity
-            android:name="com.example.android.sqliteweather.SettingsActivity"
-            android:parentActivityName="com.example.android.sqliteweather.MainActivity" />-->
+        <activity
+            android:name="com.example.musicrecommendationapp.SettingsActivity"
+            android:parentActivityName="com.example.musicrecommendationapp.MainActivity" />
         <activity
             android:name="com.example.musicrecommendationapp.MainActivity"
             android:launchMode="singleTop"
