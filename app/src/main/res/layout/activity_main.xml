@@ -72,16 +72,12 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_gravity="start"
-        android:layout_width="match_parent"
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nv_nav_drawer"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        android:background="@color/spotify_green"
-        android:text="@string/settings_drawer">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/settings"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
+        app:menu="@menu/nav_drawer"
+        app:headerLayout="@layout/nav_drawer_header"/>
 </androidx.drawerlayout.widget.DrawerLayout>

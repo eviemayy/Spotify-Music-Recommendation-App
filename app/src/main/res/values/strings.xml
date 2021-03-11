@@ -2,4 +2,7 @@
     <string name="app_name">Moodify</string>
 
     <string name="settings_drawer">Settings</string>
+    <string name="nav_song_name">Song Name</string>
+    <string name="nav_artist_name">Artist Name</string>
+    <string name="nav_album_name">Album Name</string>
 </resources>
