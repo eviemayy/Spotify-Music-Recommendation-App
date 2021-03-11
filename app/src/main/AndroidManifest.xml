@@ -17,6 +17,15 @@
             android:name="com.example.musicrecommendationapp.SettingsActivity"
             android:parentActivityName="com.example.musicrecommendationapp.MainActivity" />
         <activity
+            android:name="com.example.musicrecommendationapp.ArtistActivity"
+            android:parentActivityName="com.example.musicrecommendationapp.MainActivity" />
+        <activity
+            android:name="com.example.musicrecommendationapp.SongActivity"
+            android:parentActivityName="com.example.musicrecommendationapp.MainActivity" />
+        <activity
+            android:name="com.example.musicrecommendationapp.AlbumActivity"
+            android:parentActivityName="com.example.musicrecommendationapp.MainActivity" />
+        <activity
             android:name="com.example.musicrecommendationapp.MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/Theme.MusicRecommendationApp.NoActionBar">

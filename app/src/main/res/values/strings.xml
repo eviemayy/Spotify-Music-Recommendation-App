@@ -12,4 +12,6 @@
     <string name="pref_artist_title">Artist Title</string>
     <string name="pref_album_name">Album Name</string>
     <string name="pref_album_title">Album Title</string>
+
+    <string name="song_search_hint">"Small Town Girl"</string>
 </resources>

@@ -62,10 +62,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.drawerLayout.closeDrawers();
         switch (item.getItemId()) {
             case R.id.nav_song_name:
+                Intent songIntent = new Intent(this, SongActivity.class);
+                startActivity(songIntent);
                 return true;
             case R.id.nav_artist_name:
+                Intent artistIntent = new Intent(this, ArtistActivity.class);
+                startActivity(artistIntent);
                 return true;
             case R.id.nav_album_name:
+                Intent albumIntent = new Intent(this, AlbumActivity.class);
+                startActivity(albumIntent);
                 return true;
             default:
                 return false;
