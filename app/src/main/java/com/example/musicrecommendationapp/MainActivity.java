@@ -7,7 +7,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -25,6 +27,7 @@ import com.spotify.protocol.types.PlayerState;
 import com.spotify.protocol.types.Track;
 
 import com.google.android.material.navigation.NavigationView;
+import com.spotify.protocol.types.Uri;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
@@ -35,8 +38,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
     private View settingsButton;
 
-    private static final String CLIENT_ID = "your_client_id";
-    private static final String REDIRECT_URI = "http://com.example.musicrecommendationapp/callback";
+    private static final String CLIENT_ID = "0e3c1ff267e240949fdff12722057eca";
+    private static final String REDIRECT_URI = "http://com.example.musicrecommendationapp://callback";
     private SpotifyAppRemote mSpotifyAppRemote;
 
     @Override
@@ -60,6 +63,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
+        //trying this
+        PackageManager pm = getApplicationContext().getPackageManager();
+        boolean isSpotifyInstalled;
+        try {
+            pm.getPackageInfo("com.spotify.music", 0);
+            isSpotifyInstalled = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            isSpotifyInstalled = false;
+        }
+        Log.d(TAG, "IsSpotifyInstalled: " + isSpotifyInstalled);
+
+
+        //  Open Spotify in the Google Play Store
+        //  passing your application’s package name in the adjust_campaign parameter within the referrer:
+        /*final String appPackageName = "com.spotify.music";
+        final String referrer = "adjust_campaign=com.example.musicrecommendationapp&adjust_tracker=ndjczk&utm_source=adjust_preinstall";
+
+        try {
+            Uri uri = Uri.parse("market://details")
+                    .buildUpon()
+                    .appendQueryParameter("id", appPackageName)
+                    .appendQueryParameter("referrer", referrer)
+                    .build();
+            startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        } catch (android.content.ActivityNotFoundException ignored) {
+            Uri uri = Uri.parse("https://play.google.com/store/apps/details")
+                    .buildUpon()
+                    .appendQueryParameter("id", appPackageName)
+                    .appendQueryParameter("referrer", referrer)
+                    .build();
+            startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        }*/
+
+
     }
 
     @Override
@@ -79,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     @Override
                     public void onConnected(SpotifyAppRemote spotifyAppRemote) {
                         mSpotifyAppRemote = spotifyAppRemote;
-                        Log.d("MainActivity", "Connected! Yay!");
+                        Log.d(TAG, "Connected! Yay!");
 
                         // Now you can start interacting with App Remote
                         connected();
@@ -87,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     @Override
                     public void onFailure(Throwable throwable) {
-                        Log.e("MainActivity", throwable.getMessage(), throwable);
+                        Log.e(TAG, "Error message: " + throwable.getMessage(), throwable);
 
                         // Something went wrong when attempting to connect! Handle errors here
                     }
@@ -96,12 +133,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void connected(){
         // Play a playlist
+        Log.d(TAG, "Entered here");
         mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
     }
 
     @Override
     protected void onStop() {
+
         super.onStop();
+        SpotifyAppRemote.disconnect(mSpotifyAppRemote);
     }
 
     @Override
