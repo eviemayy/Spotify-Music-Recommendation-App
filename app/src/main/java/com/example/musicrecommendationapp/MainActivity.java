@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
-        //trying this
+        //  Is the spotify app installed on the device?
         PackageManager pm = getApplicationContext().getPackageManager();
         boolean isSpotifyInstalled;
         try {
@@ -73,28 +73,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             isSpotifyInstalled = false;
         }
         Log.d(TAG, "IsSpotifyInstalled: " + isSpotifyInstalled);
-
-
-        //  Open Spotify in the Google Play Store
-        //  passing your application’s package name in the adjust_campaign parameter within the referrer:
-        /*final String appPackageName = "com.spotify.music";
-        final String referrer = "adjust_campaign=com.example.musicrecommendationapp&adjust_tracker=ndjczk&utm_source=adjust_preinstall";
-
-        try {
-            Uri uri = Uri.parse("market://details")
-                    .buildUpon()
-                    .appendQueryParameter("id", appPackageName)
-                    .appendQueryParameter("referrer", referrer)
-                    .build();
-            startActivity(new Intent(Intent.ACTION_VIEW, uri));
-        } catch (android.content.ActivityNotFoundException ignored) {
-            Uri uri = Uri.parse("https://play.google.com/store/apps/details")
-                    .buildUpon()
-                    .appendQueryParameter("id", appPackageName)
-                    .appendQueryParameter("referrer", referrer)
-                    .build();
-            startActivity(new Intent(Intent.ACTION_VIEW, uri));
-        }*/
 
 
     }
