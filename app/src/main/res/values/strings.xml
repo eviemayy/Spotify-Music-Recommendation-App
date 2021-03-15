@@ -20,7 +20,7 @@
     <string name="pref_mood_sad">Sad</string>
     <string name="pref_mood_happy">Happy</string>
     <string name="pref_mood_study">Study</string>
-    <string name="pref_mood_workout">Workout</string>
     <string name="pref_mood_party">Party</string>
+    <string name="pref_mood_workout">Workout</string>
 
 </resources>
