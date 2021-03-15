@@ -64,6 +64,8 @@
     <string name="party_song_splashin">spotify:track:3KLo7ByvjCNyBrfz5DZ2mO</string>
     <string name="party_song_go_loko">spotify:track:1kK6DwzyXJSp58u5HYWwuD</string>
     <string name="party_song_still_brazy">spotify:track:5Uj2at1EGAaWCrLyEUuXBp</string>
+    <string name="party_song_still_brazy_name">Still Brazy</string>
+
 
     <!-- Strings for party mood artists -->
     <string name="party_artist_joey_purp">spotify:artist:1ewyVtTZBqFYWIcepopRhp</string>
