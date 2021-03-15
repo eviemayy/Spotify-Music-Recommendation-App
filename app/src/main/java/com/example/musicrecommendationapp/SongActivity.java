@@ -2,18 +2,13 @@ package com.example.musicrecommendationapp;
 
 import android.content.SharedPreferences;
 
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
+
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
