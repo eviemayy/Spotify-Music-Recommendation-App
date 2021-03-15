@@ -21,8 +21,6 @@
     <string name="pref_mood_happy">Happy</string>
     <string name="pref_mood_study">Study</string>
     <string name="pref_mood_workout">Workout</string>
-    <string name="pref_mood_calm">Calm</string>
-    <string name="pref_mood_angry">Angry</string>
-    <string name="pref_mood_love">Love</string>
+    <string name="pref_mood_party">Party</string>
 
 </resources>
