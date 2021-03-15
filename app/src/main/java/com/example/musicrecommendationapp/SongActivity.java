@@ -1,15 +1,14 @@
 package com.example.musicrecommendationapp;
 
 import android.content.SharedPreferences;
-<<<<<<< HEAD
+
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
-=======
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
->>>>>>> cade-recycler-branch-merge
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -32,10 +31,7 @@ public class SongActivity extends AppCompatActivity implements SharedPreferences
     private SongViewModel songViewModel;
     private RecyclerView songsRV;
     private SharedPreferences sharedPreferences;
-<<<<<<< HEAD
-=======
 
->>>>>>> cade-recycler-branch-merge
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
