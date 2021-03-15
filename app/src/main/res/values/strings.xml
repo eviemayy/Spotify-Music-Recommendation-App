@@ -17,10 +17,18 @@
 
     <string name="pref_mood_key" translatable="false">mood</string>
     <string name="pref_mood_title">Mood</string>
-    <string name="pref_mood_sad">Sad</string>
-    <string name="pref_mood_happy">Happy</string>
-    <string name="pref_mood_study">Study</string>
-    <string name="pref_mood_party">Party</string>
-    <string name="pref_mood_workout">Workout</string>
+    <string name="pref_mood_sad_entry">Sad</string>
+    <string name="pref_mood_happy_entry">Happy</string>
+    <string name="pref_mood_study_entry">Study</string>
+    <string name="pref_mood_party_entry">Party</string>
+    <string name="pref_mood_workout_entry">Workout</string>
+    <string name="pref_mood_default_value">Happy</string>
+
+    <string name="pref_mood_sad_value">sad</string>
+    <string name="pref_mood_happy_value">happy</string>
+    <string name="pref_mood_study_value">study</string>
+    <string name="pref_mood_party_value">party</string>
+    <string name="pref_mood_workout_value">workout</string>
+
 
 </resources>

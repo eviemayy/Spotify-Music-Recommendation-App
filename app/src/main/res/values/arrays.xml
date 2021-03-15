@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="pref_mood">
-        <item>@string/pref_mood_sad</item>
-        <item>@string/pref_mood_happy</item>
-        <item>@string/pref_mood_study</item>
-        <item>@string/pref_mood_workout</item>
-        <item>@string/pref_mood_party</item>
+    <string-array name="pref_mood_entries">
+        <item>@string/pref_mood_sad_entry</item>
+        <item>@string/pref_mood_happy_entry</item>
+        <item>@string/pref_mood_study_entry</item>
+        <item>@string/pref_mood_workout_entry</item>
+        <item>@string/pref_mood_party_entry</item>
+    </string-array>
+
+    <string-array name="pref_mood_values">
+        <item>@string/pref_mood_sad_value</item>
+        <item>@string/pref_mood_happy_value</item>
+        <item>@string/pref_mood_study_value</item>
+        <item>@string/pref_mood_workout_value</item>
+        <item>@string/pref_mood_party_value</item>
     </string-array>
 </resources>
