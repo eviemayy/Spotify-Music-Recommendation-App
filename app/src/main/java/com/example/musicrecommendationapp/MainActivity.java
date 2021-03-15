@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.preference.PreferenceManager;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,7 +32,7 @@ import com.spotify.protocol.types.Track;
 import com.google.android.material.navigation.NavigationView;
 import com.spotify.protocol.types.Uri;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView errorMessageTV;
     private DrawerLayout drawerLayout;
     private View settingsButton;
+    private SharedPreferences sharedPreferences;
 
     private static final String CLIENT_ID = "0e3c1ff267e240949fdff12722057eca";
     private static final String REDIRECT_URI = "http://com.example.musicrecommendationapp://callback";
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         this.drawerLayout = findViewById(R.id.drawer_layout);
         this.settingsButton = findViewById(R.id.action_settings);
+        this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        this.sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 
         NavigationView navigationView = findViewById(R.id.nv_nav_drawer);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
@@ -123,6 +129,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
+    protected void onDestroy() {
+        this.sharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
+        super.onDestroy();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
@@ -150,8 +162,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -167,4 +177,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        String mood = sharedPreferences.getString(
+                getString(R.string.pref_mood_key),
+                getString(R.string.pref_mood_default_value)
+        );
+
+        switch (mood) {
+            case "happy":
+                Log.d(TAG, "Happy mood: " + mood);
+                return;
+            case "sad":
+                Log.d(TAG, "Sad mood: " + mood);
+                return;
+            case "study":
+                Log.d(TAG, "Study mood: " + mood);
+                return;
+            case "workout":
+                Log.d(TAG, "Workout mood: " + mood);
+                return;
+            case "party":
+                Log.d(TAG, "Party mood: " + mood);
+                return;
+            default:
+                Log.d(TAG, "Mood isn't selected");
+                return;
+
+        }
+
+    }
 }
