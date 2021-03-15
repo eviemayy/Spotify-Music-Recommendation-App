@@ -37,4 +37,65 @@
     <string name="happy_album_happy_anywhere">spotify:album:4K4Zt6ttyStgYV5B3bWuBi</string>
     <string name="happy_album_fine_line">spotify:album:7xV2TzoaVc0ycW7fwBwAml</string>
 
+    <!-- Strings for sad mood songs -->
+    <string name="sad_song_circles">spotify:track:08TILUAN56HJoS1d9mNRty</string>
+    <string name="sad_song_funeral">spotify:track:2Tbym0L4Xlox9nol0YzPct</string>
+    <string name="sad_song_liability">spotify:track:6Kkt27YmFyIFrcX3QXFi2o</string>
+    <string name="sad_song_partys_over">spotify:track:43zdsphuZLzwA9k4DJhU0I</string>
+
+    <!-- Strings for sad mood artists -->
+    <string name="sad_artist_pheobe_bridgers">spotify:artist:1r1uxoy19fzMxunt3ONAkG</string>
+    <string name="sad_artist_julien_Baker">spotify:artist:12zbUHbPHL5DGuJtiUfsip</string>
+
+    <!-- Strings for sad mood albums -->
+    <string name="sad_album_punisher">spotify:album:2xECuqnvvmVktV7UO8Dd3s</string>
+    <string name="sad_album_stranger_in_alps">spotify:album:0AkAmg94XyiHODJaiGHh9O</string>
+    <string name="sad_album_crow_looked_at_me">spotify:album:5p64XgvFREt1P6mC7Xl6XN</string>
+
+    <!-- Strings for party mood songs -->
+    <string name="party_song_splashin">spotify:track:3KLo7ByvjCNyBrfz5DZ2mO</string>
+    <string name="party_song_go_loko">spotify:track:1kK6DwzyXJSp58u5HYWwuD</string>
+    <string name="party_song_still_brazy">spotify:track:5Uj2at1EGAaWCrLyEUuXBp</string>
+
+    <!-- Strings for party mood artists -->
+    <string name="party_artist_joey_purp">spotify:artist:1ewyVtTZBqFYWIcepopRhp</string>
+    <string name="party_artist_jack_harlow">spotify:artist:2LIk90788K0zvyj2JJVwkJ</string>
+    <string name="party_artist_rich_the_kid">spotify:artist:1pPmIToKXyGdsCF6LmqLmI</string>
+    <string name="party_artist_yg">spotify:artist:0A0FS04o6zMoto8OKPsDwY</string>
+
+    <!-- Strings for party mood albums -->
+    <string name="party_album_still_brazy_delux">spotify:album:4nwd6ernojhNIIRifDJoRz</string>
+    <string name="party_album_edm_hits">spotify:album:37bu5iGP8qyG50MbFUKbGi</string>
+    <string name="party_album_best_friend">spotify:album:28Yv9BE6ZI6dccK0sxbEq4</string>
+
+    <!-- Strings for study mood songs -->
+    <string name="study_song_channel">spotify:track:6Nle9hKrkL1wQpwNfEkxjh</string>
+    <string name="study_song_nikes">spotify:track:19YKaevk2bce4odJkP5L22</string>
+    <string name="study_song_noctilucent">spotify:track:5w5zVFRavtfpiZna3nnlmx</string>
+
+    <!-- Strings for study mood artists -->
+    <string name="study_artist_manyelli">spotify:artist:3XNKISVn4z5kkIRf8VnF5M</string>
+    <string name="study_artist_bach">spotify:artist:5aIqB5nVVvmFsvSdExz408</string>
+    <string name="study_artist_frarnk_ocean">spotify:artist:2h93pZq0e7k5yf4dywlkpM</string>
+
+    <!-- Strings for study mood albums -->
+    <string name="study_album_nutcracker">spotify:album:6PpCfTwIhXANaWzK8dDfgU</string>
+    <string name="study_album_classical_study">spotify:album:33eKmf12lj2OUKUM5T97qu</string>
+    <string name="study_album_music_for_reading">spotify:album:3NwzUWMi7mR8AySIzIJE1p</string>
+
+    <!-- Strings for workout mood songs -->
+    <string name="workout_song_new_workout_plan">spotify:track:1Vp4St7JcXaUoJcIahtf3L</string>
+    <string name="workout_song_boom_boom_pow">spotify:track:7xRNsqOQOgWbHV1nbXnfXN</string>
+    <string name="workout_song_hot_girl_summer">spotify:track:5N1o6d8zGcSZSeMFkOUQOk</string>
+
+    <!-- Strings for workout mood artists -->
+    <string name="workout_artist_black_eyed_peas">spotify:artist:1yxSLGMDHlW21z4YXirZDS</string>
+    <string name="workout_artist_megan_thee_stallion">spotify:artist:181bsRPaVXVlUKXrxwZfHK</string>
+
+    <!-- Strings for workout mood albums -->
+    <string name="workout_album_workout_mix">spotify:album:7n8Fbkh4BnzoFsGj74CpzR</string>
+    <string name="workout_album_workout_music">spotify:album:7LxBrkZXrZZTLHRiDEJfqx</string>
+    <string name="workout_album_workout_energy">spotify:album:6UKDFYRRcpDd3YM7QuZPeC</string>
+
+
 </resources>
