@@ -7,4 +7,26 @@
         <item>@string/pref_mood_workout</item>
         <item>@string/pref_mood_party</item>
     </string-array>
+
+    <!-- Array for happy mood songs -->
+    <string-array name="happy_songs">
+        <item>@string/happy_song_good_day</item>
+        <item>@string/happy_song_happy</item>
+    </string-array>
+
+    <!-- Array for happy mood artists -->
+    <string-array name="happy_artists">
+        <item>@string/happy_artist_Doja_Cat</item>
+        <item>@string/happy_artist_Grouplove</item>
+        <item>@string/happy_artist_Pharrell_Williams</item>
+    </string-array>
+
+    <!-- Array for happy mood albums -->
+    <string-array name="happy_albums">
+        <item>@string/happy_album_fine_line</item>
+        <item>@string/happy_album_happy_anywhere</item>
+        <item>@string/happy_album_happy_endings</item>
+    </string-array>
+
+
 </resources>

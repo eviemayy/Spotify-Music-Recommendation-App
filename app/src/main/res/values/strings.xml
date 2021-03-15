@@ -23,4 +23,18 @@
     <string name="pref_mood_workout">Workout</string>
     <string name="pref_mood_party">Party</string>
 
+    <!-- Strings for happy mood songs -->
+    <string name="happy_song_happy">spotify:track:60nZcImufyMA1MKQY3dcCH</string>
+    <string name="happy_song_good_day">spotify:track:4cnqxdE2opmhp7MwkvhkAJ</string>
+
+    <!-- Strings for happy mood artists -->
+    <string name="happy_artist_Grouplove">spotify:artist:3kVUvbeRdcrqQ3oHk5hPdx</string>
+    <string name="happy_artist_Doja_Cat">spotify:artist:5cj0lLjcoR7YOSnhnX0Po5</string>
+    <string name="happy_artist_Pharrell_Williams">spotify:artist:2RdwBSPQiwcmiDo9kixcl8</string>
+
+    <!-- Strings for happy mood albums -->
+    <string name="happy_album_happy_endings">spotify:album:66Y5XaoFSoa0A4P0u56s8V</string>
+    <string name="happy_album_happy_anywhere">spotify:album:4K4Zt6ttyStgYV5B3bWuBi</string>
+    <string name="happy_album_fine_line">spotify:album:7xV2TzoaVc0ycW7fwBwAml</string>
+
 </resources>
