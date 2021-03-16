@@ -8,6 +8,7 @@
 
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 
     <application
@@ -29,6 +30,8 @@
         <activity
             android:name="com.example.musicrecommendationapp.AlbumActivity"
             android:parentActivityName="com.example.musicrecommendationapp.MainActivity" />
+        <activity android:name="com.example.musicrecommendationapp.SongDetailActivity"
+            android:parentActivityName="com.example.musicrecommendationapp.SongActivity"/>
         <activity
             android:name="com.example.musicrecommendationapp.MainActivity"
             android:launchMode="singleTop"

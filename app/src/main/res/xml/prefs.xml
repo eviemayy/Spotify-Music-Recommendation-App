@@ -6,9 +6,10 @@
         android:key="@string/pref_mood_key"
         android:title="@string/pref_mood_title"
         android:dialogTitle="@string/pref_mood_title"
-        android:entryValues="@array/pref_mood"
-        android:entries="@array/pref_mood"
-        app:useSimpleSummaryProvider="true" />
+        android:entries="@array/pref_mood_entries"
+        android:entryValues="@array/pref_mood_values"
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/pref_mood_default_value"/>
 
 
 </PreferenceScreen>

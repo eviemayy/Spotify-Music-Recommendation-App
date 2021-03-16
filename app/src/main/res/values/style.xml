@@ -7,5 +7,19 @@
         <item name="colorPrimaryDark">@color/spotify_black</item>
         <item name="colorAccent">@color/spotify_green</item>
     </style>
+    <style name="TextAppearance.CS492Weather.HighTempSmall" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/spotify_black</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextAppearance.CS492Weather.LowTempSmall" parent="TextAppearance.CS492Weather.HighTempSmall">
+        <item name="android:textColor">@color/spotify_black</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextAppearance.CS492Weather.HighTempLarge" parent="TextAppearance.CS492Weather.HighTempSmall">
+        <item name="android:textSize">32sp</item>
+    </style>
+    <style name="TextAppearance.CS492Weather.LowTempLarge" parent="TextAppearance.CS492Weather.LowTempSmall">
+        <item name="android:textSize">32sp</item>
+    </style>
 
 </resources>

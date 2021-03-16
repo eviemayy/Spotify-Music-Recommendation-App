@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.preference.PreferenceManager;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,7 +32,7 @@ import com.spotify.protocol.types.Track;
 import com.google.android.material.navigation.NavigationView;
 import com.spotify.protocol.types.Uri;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView errorMessageTV;
     private DrawerLayout drawerLayout;
     private View settingsButton;
+    private SharedPreferences sharedPreferences;
 
     private static final String CLIENT_ID = "0e3c1ff267e240949fdff12722057eca";
     private static final String REDIRECT_URI = "http://com.example.musicrecommendationapp://callback";
@@ -150,8 +154,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -166,5 +168,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }
