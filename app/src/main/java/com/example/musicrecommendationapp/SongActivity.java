@@ -1,5 +1,6 @@
 package com.example.musicrecommendationapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.lifecycle.ViewModel;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,7 +21,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-public class SongActivity extends AppCompatActivity  {
+public class SongActivity extends AppCompatActivity
+        implements SongAdapter.OnSongItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private SongAdapter songAdapter;
@@ -40,7 +43,7 @@ public class SongActivity extends AppCompatActivity  {
         );
         Log.d("MOOOOOOOOOOOOOOD", "." + mood + ".");
 
-        this.songAdapter = new SongAdapter(this.generateSimpleList(mood));
+        this.songAdapter = new SongAdapter(this, this.generateSimpleList(mood));
         this.songsRV = findViewById(R.id.simple_recyclerview);
         this.songsRV.setLayoutManager(new LinearLayoutManager(this));
         this.songsRV.setHasFixedSize(true);
@@ -84,5 +87,50 @@ public class SongActivity extends AppCompatActivity  {
         }
 
         return simpleViewModelList;
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        this.sharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
+        super.onDestroy();
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        String mood = sharedPreferences.getString(
+                getString(R.string.pref_mood_key),
+                getString(R.string.pref_mood_default_value)
+        );
+
+        switch (mood) {
+            case "happy":
+                Log.d(TAG, "mood1: " + mood);
+                return;
+            case "sad":
+                Log.d(TAG, "mood2: " + mood);
+                return;
+            case "study":
+                Log.d(TAG, "mood3: " + mood);
+                return;
+            case "workout":
+                Log.d(TAG, "mood4: " + mood);
+                return;
+            case "party":
+                Log.d(TAG, "mood5: " + mood);
+                return;
+            default:
+                Log.d(TAG, "Mood isn't selected");
+                return;
+        }
+    }
+
+    @Override
+    public void onSongItemClick(String songUri) {
+        Log.d("SongActivity", "CLICKED IN SONG ACITIVYT!!!!!");
+
+        Intent intent = new Intent(this, SongDetailActivity.class);
+        intent.putExtra(SongDetailActivity.EXTRA_SONG_DATA, songUri);
+        startActivity(intent);
     }
 }
