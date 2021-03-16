@@ -16,18 +16,18 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
-public class SongAdapter extends RecyclerView.Adapter {
+public class ArtistAdapter extends RecyclerView.Adapter {
 
-    private List<SongViewModel> models = Collections.emptyList();
-    private OnSongItemClickListener onSongItemClickListener;
+    private List<ArtistViewModel> models = Collections.emptyList();
+    private OnArtistItemClickListener onArtistItemClickListener;
 
-    public interface OnSongItemClickListener{
-        void onSongItemClick(String songUri);
+    public interface OnArtistItemClickListener {
+        void onArtistItemClick(String artistUri);
     }
 
-    public SongAdapter(OnSongItemClickListener onSongItemClickListener, List<SongViewModel> songViewModels) {
-        this.models = songViewModels;
-        this.onSongItemClickListener = onSongItemClickListener;
+    public ArtistAdapter(OnArtistItemClickListener onArtistItemClickListener, List<ArtistViewModel> artistViewModels) {
+        this.models = artistViewModels;
+        this.onArtistItemClickListener = onArtistItemClickListener;
     }
 
     @NonNull
@@ -35,13 +35,13 @@ public class SongAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.song_list_item, parent, false);
-        return new SongItemViewHolder(itemView);
+        return new ArtestItemViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         Log.d("POSITION", String.valueOf(models.get(position)));
-        ((SongItemViewHolder) holder).bindData(models.get(position));
+        ((ArtestItemViewHolder) holder).bindData(models.get(position));
     }
 
     @Override
@@ -55,7 +55,7 @@ public class SongAdapter extends RecyclerView.Adapter {
         return R.layout.song_list_item;
     }
 
-    class SongItemViewHolder extends RecyclerView.ViewHolder {
+    class ArtestItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView simpleTextView;
         private TextView simpleTextView2;
@@ -68,7 +68,7 @@ public class SongAdapter extends RecyclerView.Adapter {
 
 
 
-        public SongItemViewHolder(@NonNull View itemView) {
+        public ArtestItemViewHolder(@NonNull View itemView) {
             super(itemView);
             simpleTextView = (TextView) itemView.findViewById(R.id.simple_text);
             /*simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
@@ -80,7 +80,7 @@ public class SongAdapter extends RecyclerView.Adapter {
                 @Override
                 public void onClick(View view) {
                     Log.d("SongAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSimpleText());
-                    onSongItemClickListener.onSongItemClick(
+                    onArtistItemClickListener.onArtistItemClick(
                             models.get(getAdapterPosition()).getSimpleText()
                     );
                 }
@@ -88,14 +88,14 @@ public class SongAdapter extends RecyclerView.Adapter {
 
         }
 
-        public void bindData(final SongViewModel viewModel) {
+
+        public void bindData(final ArtistViewModel viewModel) {
             simpleTextView.setText(viewModel.getSimpleText());
             /*simpleTextView2.setText("asdfg");
             simpleTextView3.setText("poiut");
             simpleTextView4.setText("ashh");
             simpleTextView5.setText("lkjhg");*/
 
-//test
         }
 
     }

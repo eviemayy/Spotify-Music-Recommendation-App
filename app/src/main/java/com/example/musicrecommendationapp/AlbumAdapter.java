@@ -16,18 +16,11 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
-public class SongAdapter extends RecyclerView.Adapter {
+public class AlbumAdapter extends RecyclerView.Adapter {
 
     private List<SongViewModel> models = Collections.emptyList();
-    private OnSongItemClickListener onSongItemClickListener;
-
-    public interface OnSongItemClickListener{
-        void onSongItemClick(String songUri);
-    }
-
-    public SongAdapter(OnSongItemClickListener onSongItemClickListener, List<SongViewModel> songViewModels) {
+    public AlbumAdapter(List<SongViewModel> songViewModels) {
         this.models = songViewModels;
-        this.onSongItemClickListener = onSongItemClickListener;
     }
 
     @NonNull
@@ -35,13 +28,13 @@ public class SongAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.song_list_item, parent, false);
-        return new SongItemViewHolder(itemView);
+        return new AlbumItemViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         Log.d("POSITION", String.valueOf(models.get(position)));
-        ((SongItemViewHolder) holder).bindData(models.get(position));
+        ((AlbumItemViewHolder) holder).bindData(models.get(position));
     }
 
     @Override
@@ -55,7 +48,7 @@ public class SongAdapter extends RecyclerView.Adapter {
         return R.layout.song_list_item;
     }
 
-    class SongItemViewHolder extends RecyclerView.ViewHolder {
+    class AlbumItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView simpleTextView;
         private TextView simpleTextView2;
@@ -68,37 +61,31 @@ public class SongAdapter extends RecyclerView.Adapter {
 
 
 
-        public SongItemViewHolder(@NonNull View itemView) {
+        public AlbumItemViewHolder(@NonNull View itemView) {
             super(itemView);
             simpleTextView = (TextView) itemView.findViewById(R.id.simple_text);
-            /*simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
-            simpleTextView3 = (TextView) itemView.findViewById(R.id.tv_low_temp);
-            simpleTextView4 = (TextView) itemView.findViewById(R.id.tv_high_temp);
-            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);*/
+            simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.d("SongAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSimpleText());
-                    onSongItemClickListener.onSongItemClick(
-                            models.get(getAdapterPosition()).getSimpleText()
-                    );
-                }
-            });
+            simpleTextView3 = (TextView) itemView.findViewById(R.id.tv_low_temp);
+
+            simpleTextView4 = (TextView) itemView.findViewById(R.id.tv_high_temp);
+
+            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);
 
         }
 
         public void bindData(final SongViewModel viewModel) {
             simpleTextView.setText(viewModel.getSimpleText());
-            /*simpleTextView2.setText("asdfg");
+            simpleTextView2.setText("asdfg");
             simpleTextView3.setText("poiut");
             simpleTextView4.setText("ashh");
-            simpleTextView5.setText("lkjhg");*/
+            simpleTextView5.setText("lkjhg");
 
-//test
+//
         }
 
     }
 }
+
 
 

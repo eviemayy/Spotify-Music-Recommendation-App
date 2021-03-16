@@ -30,6 +30,12 @@
         <activity
             android:name="com.example.musicrecommendationapp.AlbumActivity"
             android:parentActivityName="com.example.musicrecommendationapp.MainActivity" />
+        <activity android:name="com.example.musicrecommendationapp.SongDetailActivity"
+            android:parentActivityName="com.example.musicrecommendationapp.SongActivity"/>
+        <activity android:name="com.example.musicrecommendationapp.ArtistDetailActivity"
+            android:parentActivityName="com.example.musicrecommendationapp.ArtistActivity" />
+        <activity android:name="com.example.musicrecommendationapp.AlbumDetailActivity"
+            android:parentActivityName=".AlbumActivity" />
         <activity
             android:name="com.example.musicrecommendationapp.MainActivity"
             android:launchMode="singleTop"
