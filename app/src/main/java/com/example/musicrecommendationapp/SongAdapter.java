@@ -19,8 +19,15 @@ import java.util.List;
 public class SongAdapter extends RecyclerView.Adapter {
 
     private List<SongViewModel> models = Collections.emptyList();
-    public SongAdapter(List<SongViewModel> songViewModels) {
+    private OnSongItemClickListener onSongItemClickListener;
+
+    public interface OnSongItemClickListener{
+        void onSongItemClick(String songUri);
+    }
+
+    public SongAdapter(OnSongItemClickListener onSongItemClickListener, List<SongViewModel> songViewModels) {
         this.models = songViewModels;
+        this.onSongItemClickListener = onSongItemClickListener;
     }
 
     @NonNull
@@ -64,22 +71,29 @@ public class SongAdapter extends RecyclerView.Adapter {
         public SongItemViewHolder(@NonNull View itemView) {
             super(itemView);
             simpleTextView = (TextView) itemView.findViewById(R.id.simple_text);
-            simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
-
+            /*simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
             simpleTextView3 = (TextView) itemView.findViewById(R.id.tv_low_temp);
-
             simpleTextView4 = (TextView) itemView.findViewById(R.id.tv_high_temp);
+            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);*/
 
-            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("SongAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSimpleText());
+                    onSongItemClickListener.onSongItemClick(
+                            models.get(getAdapterPosition()).getSimpleText()
+                    );
+                }
+            });
 
         }
 
         public void bindData(final SongViewModel viewModel) {
             simpleTextView.setText(viewModel.getSimpleText());
-            simpleTextView2.setText("asdfg");
+            /*simpleTextView2.setText("asdfg");
             simpleTextView3.setText("poiut");
             simpleTextView4.setText("ashh");
-            simpleTextView5.setText("lkjhg");
+            simpleTextView5.setText("lkjhg");*/
 
 //
         }

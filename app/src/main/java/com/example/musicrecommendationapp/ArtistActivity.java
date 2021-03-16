@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class ArtistActivity extends AppCompatActivity {
-    private ArtistAdapter artistAdapter;
+    //private ArtistAdapter artistAdapter;
     private SongViewModel songViewModel;
     private RecyclerView artistsRV;
     private SharedPreferences sharedPreferences;
@@ -35,12 +35,12 @@ public class ArtistActivity extends AppCompatActivity {
         );
         Log.d("MOOOOOOOOOOOOOOD", "." + mood + ".");
 
-        this.artistAdapter = new ArtistAdapter(this.generateSimpleList(mood));
+        //this.artistAdapter = new ArtistAdapter(this.generateSimpleList(mood));
         this.artistsRV = findViewById(R.id.simple_recyclerview);
         this.artistsRV.setLayoutManager(new LinearLayoutManager(this));
         this.artistsRV.setHasFixedSize(true);
 
-        this.artistsRV.setAdapter(this.artistAdapter);
+        //this.artistsRV.setAdapter(this.artistAdapter);
     }
     private List<SongViewModel> generateSimpleList(String mood) {
         List<Object> newList = Collections.emptyList();

@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="1dp"
-        android:padding="8dp"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
         android:background="@color/spotify_black"
         android:orientation="horizontal">
 
@@ -21,6 +22,7 @@
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="@color/white"
             android:singleLine="true"
+            android:paddingLeft="100dp"
             app:layout_constraintBottom_toTopOf="@id/tv_time"
             app:layout_constraintEnd_toEndOf="@id/tv_time"
             app:layout_constraintStart_toStartOf="parent"

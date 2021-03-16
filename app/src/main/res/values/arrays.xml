@@ -22,6 +22,11 @@
         <item>@string/happy_song_happy</item>
     </string-array>
 
+    <string-array name="happy_songs_names">
+        <item>@string/happy_song_good_day_name</item>
+        <item>@string/happy_song_happy_name</item>
+    </string-array>
+
     <!-- Array for happy mood artists -->
     <string-array name="happy_artists">
         <item>@string/happy_artist_Doja_Cat</item>
@@ -29,11 +34,23 @@
         <item>@string/happy_artist_Pharrell_Williams</item>
     </string-array>
 
+    <string-array name="happy_artists_names">
+        <item>@string/happy_artist_Doja_Cat_name</item>
+        <item>@string/happy_artist_Grouplove_name</item>
+        <item>@string/happy_artist_Pharrell_Williams_name</item>
+    </string-array>
+
     <!-- Array for happy mood albums -->
     <string-array name="happy_albums">
         <item>@string/happy_album_fine_line</item>
         <item>@string/happy_album_happy_anywhere</item>
         <item>@string/happy_album_happy_endings</item>
+    </string-array>
+
+    <string-array name="happy_albums_names">
+        <item>@string/happy_album_fine_line_name</item>
+        <item>@string/happy_album_happy_anywhere_name</item>
+        <item>@string/happy_album_happy_endings_name</item>
     </string-array>
 
     <!-- Array for sad mood songs -->
@@ -44,10 +61,22 @@
         <item>@string/sad_song_partys_over</item>
     </string-array>
 
+    <string-array name="sad_songs_names">
+        <item>@string/sad_song_circles_name</item>
+        <item>@string/sad_song_funeral_name</item>
+        <item>@string/sad_song_liability_name</item>
+        <item>@string/sad_song_partys_over_name</item>
+    </string-array>
+
     <!-- Array for sad mood artists -->
     <string-array name="sad_artists">
         <item>@string/sad_artist_julien_Baker</item>
         <item>@string/sad_artist_pheobe_bridgers</item>
+    </string-array>
+
+    <string-array name="sad_artists_names">
+        <item>@string/sad_artist_julien_Baker_name</item>
+        <item>@string/sad_artist_pheobe_bridgers_name</item>
     </string-array>
 
     <!-- Array for sad mood albums -->
@@ -57,11 +86,23 @@
         <item>@string/sad_album_stranger_in_alps</item>
     </string-array>
 
+    <string-array name="sad_albums_names">
+        <item>@string/sad_album_punisher_name</item>
+        <item>@string/sad_album_crow_looked_at_me_name</item>
+        <item>@string/sad_album_stranger_in_alps_name</item>
+    </string-array>
+
     <!-- Array for party mood songs -->
     <string-array name="party_songs">
         <item>@string/party_song_go_loko</item>
         <item>@string/party_song_splashin</item>
         <item>@string/party_song_still_brazy</item>
+    </string-array>
+
+    <string-array name="party_songs_names">
+        <item>@string/party_song_go_loko_name</item>
+        <item>@string/party_song_splashin_name</item>
+        <item>@string/party_song_still_brazy_name</item>
     </string-array>
 
     <!-- Array for party mood artists -->
@@ -72,11 +113,24 @@
         <item>@string/party_artist_yg</item>
     </string-array>
 
+    <string-array name="party_artists_names">
+        <item>@string/party_artist_jack_harlow_name</item>
+        <item>@string/party_artist_joey_purp_name</item>
+        <item>@string/party_artist_rich_the_kid_name</item>
+        <item>@string/party_artist_yg_name</item>
+    </string-array>
+
     <!-- Array for party mood albums -->
     <string-array name="party_albums">
         <item>@string/party_album_edm_hits</item>
         <item>@string/party_album_still_brazy_delux</item>
         <item>@string/party_album_best_friend</item>
+    </string-array>
+
+    <string-array name="party_albums_names">
+        <item>@string/party_album_edm_hits_name</item>
+        <item>@string/party_album_still_brazy_delux_name</item>
+        <item>@string/party_album_best_friend_name</item>
     </string-array>
 
     <!-- Array for study mood songs -->
@@ -86,6 +140,13 @@
         <item>@string/study_song_noctilucent</item>
     </string-array>
 
+    <string-array name="study_songs_names">
+        <item>@string/study_song_channel_name</item>
+        <item>@string/study_song_nikes_name</item>
+        <item>@string/study_song_noctilucent_name</item>
+    </string-array>
+
+
     <!-- Array for study mood artists -->
     <string-array name="study_artists">
         <item>@string/study_artist_bach</item>
@@ -93,11 +154,25 @@
         <item>@string/study_artist_manyelli</item>
     </string-array>
 
+    <string-array name="study_artists_names">
+        <item>@string/study_artist_bach_name</item>
+        <item>@string/study_artist_frarnk_ocean_name</item>
+        <item>@string/study_artist_manyelli_name</item>
+    </string-array>
+
+
+
     <!-- Array for study mood albums -->
     <string-array name="study_albums">
         <item>@string/study_album_classical_study</item>
         <item>@string/study_album_nutcracker</item>
         <item>@string/study_album_music_for_reading</item>
+    </string-array>
+
+    <string-array name="study_albums_names">
+        <item>@string/study_album_classical_study_name</item>
+        <item>@string/study_album_nutcracker_name</item>
+        <item>@string/study_album_music_for_reading_name</item>
     </string-array>
 
     <!-- Array for workout mood songs -->
@@ -107,10 +182,21 @@
         <item>@string/workout_song_new_workout_plan</item>
     </string-array>
 
+    <string-array name="workout_songs_names">
+        <item>@string/workout_song_boom_boom_pow_name</item>
+        <item>@string/workout_song_hot_girl_summer_name</item>
+        <item>@string/workout_song_new_workout_plan_name</item>
+    </string-array>
+
     <!-- Array for workout mood artists -->
     <string-array name="workout_artists">
         <item>@string/workout_artist_megan_thee_stallion</item>
         <item>@string/workout_artist_black_eyed_peas</item>
+    </string-array>
+
+    <string-array name="workout_artists_names">
+        <item>@string/workout_artist_megan_thee_stallion_name</item>
+        <item>@string/workout_artist_black_eyed_peas_name</item>
     </string-array>
 
     <!-- Array for workout mood albums -->
@@ -118,6 +204,12 @@
         <item>@string/workout_album_workout_energy</item>
         <item>@string/workout_album_workout_mix</item>
         <item>@string/workout_album_workout_music</item>
+    </string-array>
+
+    <string-array name="workout_albums_names">
+        <item>@string/workout_album_workout_energy_name</item>
+        <item>@string/workout_album_workout_mix_name</item>
+        <item>@string/workout_album_workout_music_name</item>
     </string-array>
 
 
