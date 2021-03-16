@@ -1,5 +1,6 @@
 package com.example.musicrecommendationapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.lifecycle.ViewModel;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,7 +21,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-public class SongActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class SongActivity extends AppCompatActivity
+        implements SongAdapter.OnSongItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private SongAdapter songAdapter;
@@ -40,7 +43,7 @@ public class SongActivity extends AppCompatActivity implements SharedPreferences
         );
         Log.d("MOOOOOOOOOOOOOOD", "." + mood + ".");
 
-        this.songAdapter = new SongAdapter(this.generateSimpleList(mood));
+        this.songAdapter = new SongAdapter(this, this.generateSimpleList(mood));
         this.songsRV = findViewById(R.id.simple_recyclerview);
         this.songsRV.setLayoutManager(new LinearLayoutManager(this));
         this.songsRV.setHasFixedSize(true);
@@ -116,5 +119,14 @@ public class SongActivity extends AppCompatActivity implements SharedPreferences
                 Log.d(TAG, "Mood isn't selected");
                 return;
         }
+    }
+
+    @Override
+    public void onSongItemClick(String songUri) {
+        Log.d("SongActivity", "CLICKED IN SONG ACITIVYT!!!!!");
+
+        Intent intent = new Intent(this, SongDetailActivity.class);
+        intent.putExtra(SongDetailActivity.EXTRA_SONG_DATA, songUri);
+        startActivity(intent);
     }
 }
