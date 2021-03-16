@@ -81,7 +81,7 @@ public class SongAdapter extends RecyclerView.Adapter {
             simpleTextView4.setText("ashh");
             simpleTextView5.setText("lkjhg");
 
-//
+//test
         }
 
     }
