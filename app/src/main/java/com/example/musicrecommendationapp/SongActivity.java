@@ -48,38 +48,42 @@ public class SongActivity extends AppCompatActivity
         this.songsRV.setLayoutManager(new LinearLayoutManager(this));
         this.songsRV.setHasFixedSize(true);
         this.songsRV.setAdapter(this.songAdapter);
-
-        this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        this.sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     }
 
 
     private List<SongViewModel> generateSimpleList(String mood) {
         List<Object> newList = Collections.emptyList();
+        List<Object> nameList = Collections.emptyList();
         Log.d("MOOOPOOOOOD", "SHOULD BE HERE NEXT");
         if (mood.trim().equals("sad")) {
             newList = Arrays.asList(getResources().getStringArray(R.array.sad_songs));
+            nameList = Arrays.asList(getResources().getStringArray(R.array.sad_songs_names));
         }
         else if (mood.trim().equals("workout")) {
             newList = Arrays.asList(getResources().getStringArray(R.array.workout_songs));
+            nameList = Arrays.asList(getResources().getStringArray(R.array.workout_songs_names));
         }
         else if (mood.trim().equals("happy")) {
             newList = Arrays.asList(getResources().getStringArray(R.array.happy_songs));
+            nameList = Arrays.asList(getResources().getStringArray(R.array.happy_songs_names));
         }
         else if (mood.trim().equals("study")) {
             newList = Arrays.asList(getResources().getStringArray(R.array.study_songs));
+            nameList = Arrays.asList(getResources().getStringArray(R.array.study_songs_names));
         }
         else if (mood.trim().equals("party")) {
             newList = Arrays.asList(getResources().getStringArray(R.array.party_songs));
+            nameList = Arrays.asList(getResources().getStringArray(R.array.party_songs_names));
         }
         else {
             newList = Arrays.asList(getResources().getStringArray(R.array.happy_songs));
+            nameList = Arrays.asList(getResources().getStringArray(R.array.happy_songs_names));
         }
         List<SongViewModel> simpleViewModelList = new ArrayList<>();
         //String songName = "    " + getString(R.string.party_song_still_brazy_name);
 
         for (int i = 0; i < newList.size(); i++) {
-            simpleViewModelList.add(new SongViewModel(String.format(Locale.US, (String) newList.get(i))));
+            simpleViewModelList.add(new SongViewModel(String.format(Locale.US, (String) nameList.get(i))));
         }
 
         return simpleViewModelList;
