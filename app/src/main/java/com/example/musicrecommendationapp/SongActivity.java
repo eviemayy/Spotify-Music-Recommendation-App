@@ -1,14 +1,14 @@
 package com.example.musicrecommendationapp;
 
 import android.content.SharedPreferences;
+
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.widget.TextView;
+
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
+
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,8 +19,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-public class SongActivity extends AppCompatActivity {
+public class SongActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     private SongAdapter songAdapter;
     private SongViewModel songViewModel;
     private RecyclerView songsRV;
@@ -43,8 +44,10 @@ public class SongActivity extends AppCompatActivity {
         this.songsRV = findViewById(R.id.simple_recyclerview);
         this.songsRV.setLayoutManager(new LinearLayoutManager(this));
         this.songsRV.setHasFixedSize(true);
-
         this.songsRV.setAdapter(this.songAdapter);
+
+        this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        this.sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     }
 
 
@@ -77,5 +80,41 @@ public class SongActivity extends AppCompatActivity {
         }
 
         return simpleViewModelList;
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        this.sharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
+        super.onDestroy();
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        String mood = sharedPreferences.getString(
+                getString(R.string.pref_mood_key),
+                getString(R.string.pref_mood_default_value)
+        );
+
+        switch (mood) {
+            case "happy":
+                Log.d(TAG, "mood1: " + mood);
+                return;
+            case "sad":
+                Log.d(TAG, "mood2: " + mood);
+                return;
+            case "study":
+                Log.d(TAG, "mood3: " + mood);
+                return;
+            case "workout":
+                Log.d(TAG, "mood4: " + mood);
+                return;
+            case "party":
+                Log.d(TAG, "mood5: " + mood);
+                return;
+            default:
+                Log.d(TAG, "Mood isn't selected");
+                return;
+        }
     }
 }
