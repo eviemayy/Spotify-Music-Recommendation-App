@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onStart() {
         super.onStart();
-
+        /*
         // Set the connection parameters
         ConnectionParams connectionParams =
                 new ConnectionParams.Builder(CLIENT_ID)
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                         // Something went wrong when attempting to connect! Handle errors here
                     }
-                });
+                });*/
     }
 
     private void connected(){
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onStop() {
 
         super.onStop();
-        SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+        //SpotifyAppRemote.disconnect(mSpotifyAppRemote);
     }
 
     @Override

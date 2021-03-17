@@ -22,7 +22,7 @@ public class SongAdapter extends RecyclerView.Adapter {
     private OnSongItemClickListener onSongItemClickListener;
 
     public interface OnSongItemClickListener{
-        void onSongItemClick(String songUri);
+        void onSongItemClick(String songUri, String songName);
     }
 
     public SongAdapter(OnSongItemClickListener onSongItemClickListener, List<SongViewModel> songViewModels) {
@@ -79,9 +79,10 @@ public class SongAdapter extends RecyclerView.Adapter {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("SongAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSimpleText());
+                    Log.d("SongAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSongName());
                     onSongItemClickListener.onSongItemClick(
-                            models.get(getAdapterPosition()).getSimpleText()
+                            models.get(getAdapterPosition()).getSongUri(),
+                            models.get(getAdapterPosition()).getSongName()
                     );
                 }
             });
@@ -89,7 +90,7 @@ public class SongAdapter extends RecyclerView.Adapter {
         }
 
         public void bindData(final SongViewModel viewModel) {
-            simpleTextView.setText(viewModel.getSimpleText());
+            simpleTextView.setText(viewModel.getSongUri());
             /*simpleTextView2.setText("asdfg");
             simpleTextView3.setText("poiut");
             simpleTextView4.setText("ashh");
