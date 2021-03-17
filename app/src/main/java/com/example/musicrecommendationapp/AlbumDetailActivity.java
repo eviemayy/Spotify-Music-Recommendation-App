@@ -2,17 +2,24 @@ package com.example.musicrecommendationapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 public class AlbumDetailActivity extends AppCompatActivity {
 
     private static final String TAG = AlbumDetailActivity.class.getSimpleName();
     public static final String EXTRA_ALBUM_DATA = "AlbumDetailActivity.AlbumData";
+
+    private SharedPreferences sharedPreferences;
     private String albumName;
 
     @Override
@@ -33,6 +40,27 @@ public class AlbumDetailActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.song_detail, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.action_share:
+                shareAlbum();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void shareAlbum(){
+        Log.d(TAG, "shareAlbum");
     }
 
 
