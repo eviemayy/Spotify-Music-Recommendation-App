@@ -22,7 +22,7 @@ public class ArtistAdapter extends RecyclerView.Adapter {
     private OnArtistItemClickListener onArtistItemClickListener;
 
     public interface OnArtistItemClickListener {
-        void onArtistItemClick(String artistUri);
+        void onArtistItemClick(String artistUri, String artistName);
     }
 
     public ArtistAdapter(OnArtistItemClickListener onArtistItemClickListener, List<ArtistViewModel> artistViewModels) {
@@ -79,9 +79,10 @@ public class ArtistAdapter extends RecyclerView.Adapter {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("SongAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSimpleText());
+                    Log.d("SongAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getArtistUri());
                     onArtistItemClickListener.onArtistItemClick(
-                            models.get(getAdapterPosition()).getSimpleText()
+                            models.get(getAdapterPosition()).getArtistUri(),
+                            models.get(getAdapterPosition()).getArtistName()
                     );
                 }
             });
@@ -89,9 +90,8 @@ public class ArtistAdapter extends RecyclerView.Adapter {
         }
 
 
-
         public void bindData(final ArtistViewModel viewModel) {
-            simpleTextView.setText(viewModel.getSimpleText());
+            simpleTextView.setText(viewModel.getArtistName());
 
         }
 
