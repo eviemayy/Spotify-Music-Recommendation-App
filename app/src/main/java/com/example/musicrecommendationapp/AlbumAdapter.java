@@ -75,7 +75,7 @@ public class AlbumAdapter extends RecyclerView.Adapter {
         }
 
         public void bindData(final SongViewModel viewModel) {
-            simpleTextView.setText(viewModel.getSongName());
+            simpleTextView.setText(viewModel.getSongUri());
             simpleTextView2.setText("asdfg");
             simpleTextView3.setText("poiut");
             simpleTextView4.setText("ashh");
