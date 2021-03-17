@@ -133,16 +133,15 @@ public class SongDetailActivity extends AppCompatActivity {
                             this.songName = track.name;
                             this.songArtist = track.artist.name;
                             this.imageUri = track.imageUri;
+                            mSpotifyAppRemote.getImagesApi().getImage(imageUri).setResultCallback(
+                                    bitmap -> {
+                                        albumArtImageView.setImageBitmap(bitmap);
+                                        Log.d(TAG, bitmap.toString());
+                                    }
+                            );
                             artistTV.setText(songArtist);
                         }
                     });
-
-            mSpotifyAppRemote.getImagesApi().getImage(imageUri).setResultCallback(
-                    bitmap -> {
-                        albumArtImageView.setImageBitmap(bitmap);
-                        Log.d(TAG, bitmap.toString());
-                    }
-            );
         }
 
 
