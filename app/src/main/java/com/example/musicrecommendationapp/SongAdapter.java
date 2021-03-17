@@ -63,11 +63,6 @@ public class SongAdapter extends RecyclerView.Adapter {
         public SongItemViewHolder(@NonNull View itemView) {
             super(itemView);
             simpleTextView = (TextView) itemView.findViewById(R.id.simple_text);
-            /*simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
-            simpleTextView3 = (TextView) itemView.findViewById(R.id.tv_low_temp);
-            simpleTextView4 = (TextView) itemView.findViewById(R.id.tv_high_temp);
-            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);*/
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
