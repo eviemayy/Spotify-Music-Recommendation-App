@@ -2,14 +2,24 @@ package com.example.musicrecommendationapp;
 
 import android.app.Activity;
 import android.content.Intent;
+
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
@@ -20,8 +30,13 @@ import com.spotify.protocol.types.Track;
 public class AlbumDetailActivity extends AppCompatActivity {
 
     private static final String TAG = AlbumDetailActivity.class.getSimpleName();
+
     public static final String EXTRA_ALBUM_URI = "AlbumDetailActivity.AlbumUri";
     public static final String EXTRA_ALBUM_NAME = "AlbumDetailActivity.AlbumName";
+    public static final String EXTRA_ALBUM_DATA = "AlbumDetailActivity.AlbumData";
+
+    private SharedPreferences sharedPreferences;
+  
     private String albumName;
     private String albumArtist;
     private String albumUri;
@@ -147,5 +162,26 @@ public class AlbumDetailActivity extends AppCompatActivity {
     private void onDisconnected(){
         albumArtImageView.setImageResource(R.drawable.moodify_logo);
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.song_detail, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.action_share:
+                shareAlbum();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void shareAlbum(){
+        Log.d(TAG, "shareAlbum");
+    }
+
 
 }
