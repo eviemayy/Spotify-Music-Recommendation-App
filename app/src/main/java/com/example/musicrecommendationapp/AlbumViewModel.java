@@ -5,19 +5,45 @@ import androidx.lifecycle.ViewModel;
 
 public class AlbumViewModel extends ViewModel {
 
-    private String simpleText;
+    private String albumUri;
+    private String albumName;
+    private String albumArtist;
+    private String albumArtUri;
 
-    public AlbumViewModel(@NonNull final String simpleText) {
-        setSimpleText(simpleText);
+
+    public AlbumViewModel(@NonNull final String albumUri, String albumName) {
+        this.albumUri = albumUri;
+        this.albumName = albumName;
     }
 
+    //get the album uri
     @NonNull
-    public String getSimpleText() {
-        return simpleText;
+    public String getAlbumUri() {
+        return albumUri;
     }
 
-    public void setSimpleText(@NonNull final String simpleText) {
-        this.simpleText = simpleText;
+    //get the album name
+    @NonNull
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    //get the album artist
+    @NonNull
+    public String getAlbumArtist() {
+        return albumArtist;
+    }
+
+    //get the album art uri
+    @NonNull
+    public String getAlbumArtUri() {
+        return albumArtUri;
+    }
+
+
+    //set the song uri
+    public void setAlbumUri(@NonNull final String albumUri) {
+        this.albumUri = albumUri;
     }
 
 }

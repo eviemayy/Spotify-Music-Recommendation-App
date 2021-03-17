@@ -22,7 +22,7 @@ public class AlbumAdapter extends RecyclerView.Adapter {
     private AlbumAdapter.OnAlbumItemClickListener onAlbumItemClickListener;
 
     public interface OnAlbumItemClickListener{
-        void onAlbumItemClick(String albumUri);
+        void onAlbumItemClick(String albumUri, String albumName);
     }
 
     public AlbumAdapter(AlbumAdapter.OnAlbumItemClickListener onAlbumItemClickListener, List<AlbumViewModel> albumViewModels) {
@@ -79,16 +79,17 @@ public class AlbumAdapter extends RecyclerView.Adapter {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("AlbumAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSimpleText());
+                    Log.d("AlbumAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getAlbumName());
                     onAlbumItemClickListener.onAlbumItemClick(
-                            models.get(getAdapterPosition()).getSimpleText()
+                            models.get(getAdapterPosition()).getAlbumUri(),
+                            models.get(getAdapterPosition()).getAlbumName()
                     );
                 }
             });
         }
 
         public void bindData(final AlbumViewModel viewModel) {
-            simpleTextView.setText(viewModel.getSimpleText());
+            simpleTextView.setText(viewModel.getAlbumUri());
             /*simpleTextView2.setText("asdfg");
             simpleTextView3.setText("poiut");
             simpleTextView4.setText("ashh");
