@@ -18,9 +18,16 @@ import java.util.List;
 
 public class AlbumAdapter extends RecyclerView.Adapter {
 
-    private List<SongViewModel> models = Collections.emptyList();
-    public AlbumAdapter(List<SongViewModel> songViewModels) {
-        this.models = songViewModels;
+    private List<AlbumViewModel> models = Collections.emptyList();
+    private AlbumAdapter.OnAlbumItemClickListener onAlbumItemClickListener;
+
+    public interface OnAlbumItemClickListener{
+        void onAlbumItemClick(String albumUri);
+    }
+
+    public AlbumAdapter(AlbumAdapter.OnAlbumItemClickListener onAlbumItemClickListener, List<AlbumViewModel> albumViewModels) {
+        this.models = albumViewModels;
+        this.onAlbumItemClickListener = onAlbumItemClickListener;
     }
 
     @NonNull
@@ -64,27 +71,33 @@ public class AlbumAdapter extends RecyclerView.Adapter {
         public AlbumItemViewHolder(@NonNull View itemView) {
             super(itemView);
             simpleTextView = (TextView) itemView.findViewById(R.id.simple_text);
-            simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
-
+            /*(simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
             simpleTextView3 = (TextView) itemView.findViewById(R.id.tv_low_temp);
-
             simpleTextView4 = (TextView) itemView.findViewById(R.id.tv_high_temp);
+            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);*/
 
-            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("AlbumAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSimpleText());
+                    onAlbumItemClickListener.onAlbumItemClick(
+                            models.get(getAdapterPosition()).getSimpleText()
+                    );
+                }
+            });
         }
 
-        public void bindData(final SongViewModel viewModel) {
-            simpleTextView.setText(viewModel.getSongUri());
-            simpleTextView2.setText("asdfg");
+        public void bindData(final AlbumViewModel viewModel) {
+            simpleTextView.setText(viewModel.getSimpleText());
+            /*simpleTextView2.setText("asdfg");
             simpleTextView3.setText("poiut");
             simpleTextView4.setText("ashh");
-            simpleTextView5.setText("lkjhg");
+            simpleTextView5.setText("lkjhg");*/
 
-//
         }
 
     }
+
 }
 
 
