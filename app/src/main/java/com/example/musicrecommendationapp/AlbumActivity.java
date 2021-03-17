@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class AlbumActivity extends AppCompatActivity
-        implements AlbumAdapter.OnAlbumItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener{
+        implements AlbumAdapter.OnAlbumItemClickListener {
 
 
     private AlbumAdapter albumAdapter;
@@ -78,56 +78,22 @@ public class AlbumActivity extends AppCompatActivity
             nameList = Arrays.asList(getResources().getStringArray(R.array.happy_albums_names));
         }
         List<AlbumViewModel> simpleViewModelList = new ArrayList<>();
-        //String songName = "    " + getString(R.string.party_song_still_brazy_name);
 
         for (int i = 0; i < newList.size(); i++) {
-            simpleViewModelList.add(new AlbumViewModel(String.format(Locale.US, (String) newList.get(i))));
+            simpleViewModelList.add(new AlbumViewModel(String.format(Locale.US, (String) newList.get(i)),(String) nameList.get(i)));
         }
 
         return simpleViewModelList;
     }
 
-    @Override
-    protected void onDestroy() {
-        this.sharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
-        super.onDestroy();
-    }
 
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        String mood = sharedPreferences.getString(
-                getString(R.string.pref_mood_key),
-                getString(R.string.pref_mood_default_value)
-        );
-
-        switch (mood) {
-            case "happy":
-                Log.d(TAG, "mood1: " + mood);
-                return;
-            case "sad":
-                Log.d(TAG, "mood2: " + mood);
-                return;
-            case "study":
-                Log.d(TAG, "mood3: " + mood);
-                return;
-            case "workout":
-                Log.d(TAG, "mood4: " + mood);
-                return;
-            case "party":
-                Log.d(TAG, "mood5: " + mood);
-                return;
-            default:
-                Log.d(TAG, "Mood isn't selected");
-                return;
-        }
-    }
-
-    @Override
-    public void onAlbumItemClick(String albumUri) {
+    public void onAlbumItemClick(String albumUri, String albumName) {
         Log.d("SongActivity", "CLICKED IN ALBUM ACITIVYT!!!!!");
 
         Intent intent = new Intent(this, AlbumDetailActivity.class);
-        intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_DATA, albumUri);
+        intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_URI, albumUri);
+        intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_NAME, albumName);
         startActivity(intent);
     }
 }

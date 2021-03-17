@@ -22,7 +22,7 @@ public class AlbumAdapter extends RecyclerView.Adapter {
     private AlbumAdapter.OnAlbumItemClickListener onAlbumItemClickListener;
 
     public interface OnAlbumItemClickListener{
-        void onAlbumItemClick(String albumUri);
+        void onAlbumItemClick(String albumUri, String albumName);
     }
 
     public AlbumAdapter(AlbumAdapter.OnAlbumItemClickListener onAlbumItemClickListener, List<AlbumViewModel> albumViewModels) {
@@ -58,42 +58,28 @@ public class AlbumAdapter extends RecyclerView.Adapter {
     class AlbumItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView simpleTextView;
-        private TextView simpleTextView2;
 
-        private TextView simpleTextView3;
-
-        private TextView simpleTextView4;
-
-        private TextView simpleTextView5;
 
 
 
         public AlbumItemViewHolder(@NonNull View itemView) {
             super(itemView);
             simpleTextView = (TextView) itemView.findViewById(R.id.simple_text);
-            /*(simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
-            simpleTextView3 = (TextView) itemView.findViewById(R.id.tv_low_temp);
-            simpleTextView4 = (TextView) itemView.findViewById(R.id.tv_high_temp);
-            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);*/
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("AlbumAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSimpleText());
+                    Log.d("AlbumAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getAlbumName());
                     onAlbumItemClickListener.onAlbumItemClick(
-                            models.get(getAdapterPosition()).getSimpleText()
+                            models.get(getAdapterPosition()).getAlbumUri(),
+                            models.get(getAdapterPosition()).getAlbumName()
                     );
                 }
             });
         }
 
         public void bindData(final AlbumViewModel viewModel) {
-            simpleTextView.setText(viewModel.getSimpleText());
-            /*simpleTextView2.setText("asdfg");
-            simpleTextView3.setText("poiut");
-            simpleTextView4.setText("ashh");
-            simpleTextView5.setText("lkjhg");*/
-
+            simpleTextView.setText(viewModel.getAlbumUri());
         }
 
     }

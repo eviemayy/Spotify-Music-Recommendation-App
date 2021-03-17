@@ -17,8 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-public class ArtistActivity extends AppCompatActivity
-        implements ArtistAdapter.OnArtistItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener{
+public class ArtistActivity extends AppCompatActivity implements ArtistAdapter.OnArtistItemClickListener {
 
     private static final String TAG = ArtistActivity.class.getSimpleName();
     private ArtistAdapter artistAdapter;
@@ -85,40 +84,6 @@ public class ArtistActivity extends AppCompatActivity
         return simpleViewModelList;
     }
 
-    @Override
-    protected void onDestroy() {
-        this.sharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
-        super.onDestroy();
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        String mood = sharedPreferences.getString(
-                getString(R.string.pref_mood_key),
-                getString(R.string.pref_mood_default_value)
-        );
-
-        switch (mood) {
-            case "happy":
-                Log.d(TAG, "mood1: " + mood);
-                return;
-            case "sad":
-                Log.d(TAG, "mood2: " + mood);
-                return;
-            case "study":
-                Log.d(TAG, "mood3: " + mood);
-                return;
-            case "workout":
-                Log.d(TAG, "mood4: " + mood);
-                return;
-            case "party":
-                Log.d(TAG, "mood5: " + mood);
-                return;
-            default:
-                Log.d(TAG, "Mood isn't selected");
-                return;
-        }
-    }
 
     @Override
     public void onArtistItemClick(String artistUri) {

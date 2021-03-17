@@ -58,14 +58,6 @@ public class SongAdapter extends RecyclerView.Adapter {
     class SongItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView simpleTextView;
-        private TextView simpleTextView2;
-
-        private TextView simpleTextView3;
-
-        private TextView simpleTextView4;
-
-        private TextView simpleTextView5;
-
 
 
         public SongItemViewHolder(@NonNull View itemView) {
@@ -91,12 +83,6 @@ public class SongAdapter extends RecyclerView.Adapter {
 
         public void bindData(final SongViewModel viewModel) {
             simpleTextView.setText(viewModel.getSongUri());
-            /*simpleTextView2.setText("asdfg");
-            simpleTextView3.setText("poiut");
-            simpleTextView4.setText("ashh");
-            simpleTextView5.setText("lkjhg");*/
-
-//test
         }
 
     }
