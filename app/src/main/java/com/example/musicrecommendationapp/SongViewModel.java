@@ -5,18 +5,44 @@ import androidx.lifecycle.ViewModel;
 
 public class SongViewModel extends ViewModel {
 
-    private String simpleText;
+    private String songUri; //was simpleText
+    private String songName;
+    private String songArtist;
+    private String albumArtUri;
 
-    public SongViewModel(@NonNull final String simpleText) {
-        setSimpleText(simpleText);
+    public SongViewModel(@NonNull final String songUri, String songName) {
+
+        this.songUri = songUri;
+        this.songName = songName;
     }
 
+    //get the song uri
     @NonNull
-    public String getSimpleText() {
-        return simpleText;
+    public String getSongUri() {
+        return songUri;
     }
 
-    public void setSimpleText(@NonNull final String simpleText) {
-        this.simpleText = simpleText;
+    //get the song name
+    @NonNull
+    public String getSongName() {
+        return songName;
+    }
+
+    //get the song artist
+    @NonNull
+    public String getSongArtist() {
+        return songArtist;
+    }
+
+    //get the album art uri
+    @NonNull
+    public String getAlbumArtUri() {
+        return albumArtUri;
+    }
+
+
+    //set tthe song uri
+    public void setSongUri(@NonNull final String songUri) {
+        this.songUri = songUri;
     }
 }

@@ -68,7 +68,7 @@ public class AlbumActivity extends AppCompatActivity {
         //String songName = "    " + getString(R.string.party_song_still_brazy_name);
 
         for (int i = 0; i < newList.size(); i++) {
-            simpleViewModelList.add(new SongViewModel(String.format(Locale.US, (String) newList.get(i))));
+            simpleViewModelList.add(new SongViewModel(String.format(Locale.US, (String) newList.get(i)),"temp song name"));
         }
 
         return simpleViewModelList;
