@@ -180,7 +180,18 @@ public class AlbumDetailActivity extends AppCompatActivity {
     }
 
     private void shareAlbum(){
-        Log.d(TAG, "shareAlbum");
+        this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String mood = sharedPreferences.getString("mood", "Happy");
+        if(this.albumUri != null){
+            String shareText;
+            shareText = getString(R.string.share_album_text, mood, this.albumName, this.albumArtist);
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT, shareText);
+            intent.setType("text/plain");
+
+            Intent chooserIntent = Intent.createChooser(intent, null);
+            startActivity(chooserIntent);
+        }
     }
 
 

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 public class ArtistDetailActivity extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class ArtistDetailActivity extends AppCompatActivity {
     public static final String EXTRA_ARTIST_NAME = "ArtistDetailActivity.ArtistName";
     public static final String EXTRA_ARTIST_URI = "ArtistDetailActivity.ArtistUri";
     private String artistName;
+    private String artistUri;
 
     private SharedPreferences sharedPreferences;
 
@@ -34,7 +36,8 @@ public class ArtistDetailActivity extends AppCompatActivity {
 
         if(intent != null && intent.hasExtra(EXTRA_ARTIST_URI)){
             this.artistName = (String)intent.getSerializableExtra(EXTRA_ARTIST_NAME);
-            Log.d(TAG, "Artist name: " + artistName);
+            this.artistUri = (String)intent.getSerializableExtra(EXTRA_ARTIST_URI);
+            Log.d(TAG, "Artist name: " + artistName + "Artist URI: " + artistUri);
             TextView artistUriTV = findViewById(R.id.tv_placeholder);
             artistUriTV.setText(artistName);
 
@@ -60,7 +63,18 @@ public class ArtistDetailActivity extends AppCompatActivity {
     }
 
     private void shareArtist(){
-        Log.d(TAG, "shareArtist");
+        this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String mood = sharedPreferences.getString("mood", "Happy");
+        if(this.artistUri != null){
+            String shareText;
+            shareText = getString(R.string.share_artist_text, mood, this.artistName);
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT, shareText);
+            intent.setType("text/plain");
+
+            Intent chooserIntent = Intent.createChooser(intent, null);
+            startActivity(chooserIntent);
+        }
     }
 
 
