@@ -79,7 +79,7 @@ public class AlbumAdapter extends RecyclerView.Adapter {
         }
 
         public void bindData(final AlbumViewModel viewModel) {
-            simpleTextView.setText(viewModel.getAlbumUri());
+            simpleTextView.setText(viewModel.getAlbumName());
         }
 
     }

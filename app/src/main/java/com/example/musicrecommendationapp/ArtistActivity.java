@@ -77,7 +77,7 @@ public class ArtistActivity extends AppCompatActivity implements ArtistAdapter.O
         //String songName = "    " + getString(R.string.party_song_still_brazy_name);
 
         for (int i = 0; i < newList.size(); i++) {
-            simpleViewModelList.add(new ArtistViewModel(String.format(Locale.US, (String) newList.get(i))));
+            simpleViewModelList.add(new ArtistViewModel(String.format(Locale.US, (String) newList.get(i)), (String)nameList.get(i)));
 
         }
 
@@ -86,11 +86,12 @@ public class ArtistActivity extends AppCompatActivity implements ArtistAdapter.O
 
 
     @Override
-    public void onArtistItemClick(String artistUri) {
+    public void onArtistItemClick(String artistUri, String artistName) {
         Log.d("ArtistActivity", "CLICKED IN ARTIST ACITIVYT!!!!!");
 
         Intent intent = new Intent(this, ArtistDetailActivity.class);
-        intent.putExtra(ArtistDetailActivity.EXTRA_ARTIST_DATA, artistUri);
+        intent.putExtra(ArtistDetailActivity.EXTRA_ARTIST_NAME, artistName);
+        intent.putExtra(ArtistDetailActivity.EXTRA_ARTIST_URI, artistUri);
         startActivity(intent);
     }
 }
