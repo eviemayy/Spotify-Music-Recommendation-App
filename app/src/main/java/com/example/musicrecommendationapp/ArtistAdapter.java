@@ -89,12 +89,9 @@ public class ArtistAdapter extends RecyclerView.Adapter {
         }
 
 
+
         public void bindData(final ArtistViewModel viewModel) {
             simpleTextView.setText(viewModel.getSimpleText());
-            /*simpleTextView2.setText("asdfg");
-            simpleTextView3.setText("poiut");
-            simpleTextView4.setText("ashh");
-            simpleTextView5.setText("lkjhg");*/
 
         }
 

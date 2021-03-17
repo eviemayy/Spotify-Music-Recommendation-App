@@ -79,6 +79,7 @@ public class ArtistActivity extends AppCompatActivity
 
         for (int i = 0; i < newList.size(); i++) {
             simpleViewModelList.add(new ArtistViewModel(String.format(Locale.US, (String) newList.get(i))));
+
         }
 
         return simpleViewModelList;

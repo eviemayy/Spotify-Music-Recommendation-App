@@ -20,11 +20,13 @@ import java.util.Locale;
 public class AlbumActivity extends AppCompatActivity
         implements AlbumAdapter.OnAlbumItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener{
 
-    private static final String TAG = AlbumActivity.class.getSimpleName();
+
     private AlbumAdapter albumAdapter;
     private AlbumViewModel albumViewModel;
     private RecyclerView albumRV;
     private SharedPreferences sharedPreferences;
+
+    private static final String TAG = AlbumActivity.class.getSimpleName();
 
 
     @Override
