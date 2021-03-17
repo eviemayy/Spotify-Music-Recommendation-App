@@ -31,7 +31,7 @@ import java.util.Locale;
 public class SongActivity extends AppCompatActivity
         implements SongAdapter.OnSongItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = SongActivity.class.getSimpleName();
     private SongAdapter songAdapter;
     private SongViewModel songViewModel;
     private RecyclerView songsRV;

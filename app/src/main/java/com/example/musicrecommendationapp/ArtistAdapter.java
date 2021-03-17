@@ -18,9 +18,16 @@ import java.util.List;
 
 public class ArtistAdapter extends RecyclerView.Adapter {
 
-    private List<SongViewModel> models = Collections.emptyList();
-    public ArtistAdapter(List<SongViewModel> songViewModels) {
-        this.models = songViewModels;
+    private List<ArtistViewModel> models = Collections.emptyList();
+    private OnArtistItemClickListener onArtistItemClickListener;
+
+    public interface OnArtistItemClickListener {
+        void onArtistItemClick(String artistUri);
+    }
+
+    public ArtistAdapter(OnArtistItemClickListener onArtistItemClickListener, List<ArtistViewModel> artistViewModels) {
+        this.models = artistViewModels;
+        this.onArtistItemClickListener = onArtistItemClickListener;
     }
 
     @NonNull
@@ -64,24 +71,28 @@ public class ArtistAdapter extends RecyclerView.Adapter {
         public ArtestItemViewHolder(@NonNull View itemView) {
             super(itemView);
             simpleTextView = (TextView) itemView.findViewById(R.id.simple_text);
-            simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
-
+            /*simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
             simpleTextView3 = (TextView) itemView.findViewById(R.id.tv_low_temp);
-
             simpleTextView4 = (TextView) itemView.findViewById(R.id.tv_high_temp);
+            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);*/
 
-            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("SongAdapter", "onCLICK in ADAPTEER: " + models.get(getAdapterPosition()).getSimpleText());
+                    onArtistItemClickListener.onArtistItemClick(
+                            models.get(getAdapterPosition()).getSimpleText()
+                    );
+                }
+            });
 
         }
 
-        public void bindData(final SongViewModel viewModel) {
-            simpleTextView.setText(viewModel.getSongName());
-            simpleTextView2.setText("asdfg");
-            simpleTextView3.setText("poiut");
-            simpleTextView4.setText("ashh");
-            simpleTextView5.setText("lkjhg");
 
-//
+
+        public void bindData(final ArtistViewModel viewModel) {
+            simpleTextView.setText(viewModel.getSimpleText());
+
         }
 
     }
