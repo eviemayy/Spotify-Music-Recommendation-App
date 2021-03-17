@@ -17,6 +17,11 @@ import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.spotify.android.appremote.api.ConnectionParams;
+import com.spotify.android.appremote.api.Connector;
+import com.spotify.android.appremote.api.SpotifyAppRemote;
+import com.spotify.protocol.types.Track;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,7 +36,6 @@ public class SongActivity extends AppCompatActivity
     private SongViewModel songViewModel;
     private RecyclerView songsRV;
     private SharedPreferences sharedPreferences;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,8 +58,8 @@ public class SongActivity extends AppCompatActivity
 
 
     private List<SongViewModel> generateSimpleList(String mood) {
-        List<Object> newList = Collections.emptyList();
-        List<Object> nameList = Collections.emptyList();
+        List<Object> newList = Collections.emptyList(); //list of song uris
+        List<Object> nameList = Collections.emptyList(); //list of song names
         Log.d("MOOOPOOOOOD", "SHOULD BE HERE NEXT");
         if (mood.trim().equals("sad")) {
             newList = Arrays.asList(getResources().getStringArray(R.array.sad_songs));
@@ -85,12 +89,11 @@ public class SongActivity extends AppCompatActivity
         //String songName = "    " + getString(R.string.party_song_still_brazy_name);
 
         for (int i = 0; i < newList.size(); i++) {
-            simpleViewModelList.add(new SongViewModel(String.format(Locale.US, (String) nameList.get(i))));
+            simpleViewModelList.add(new SongViewModel(String.format(Locale.US, (String) nameList.get(i)),(String) newList.get(i) ));
         }
 
         return simpleViewModelList;
     }
-
 
     @Override
     protected void onDestroy() {
@@ -127,12 +130,16 @@ public class SongActivity extends AppCompatActivity
         }
     }
 
+
+
     @Override
-    public void onSongItemClick(String songUri) {
+    public void onSongItemClick(String songName, String songUri) {
         Log.d("SongActivity", "CLICKED IN SONG ACITIVYT!!!!!");
 
         Intent intent = new Intent(this, SongDetailActivity.class);
-        intent.putExtra(SongDetailActivity.EXTRA_SONG_DATA, songUri);
+        intent.putExtra(SongDetailActivity.EXTRA_SONG_URI, songUri);
+        intent.putExtra(SongDetailActivity.EXTRA_SONG_NAME, songName);
+
         startActivity(intent);
     }
 }
