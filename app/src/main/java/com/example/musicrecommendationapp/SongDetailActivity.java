@@ -5,9 +5,12 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
@@ -31,6 +34,8 @@ public class SongDetailActivity extends AppCompatActivity {
     private String songArtist;
     private String songUri;
     private ImageUri imageUri;
+
+    private SharedPreferences sharedPreferences;
 
     private static final String CLIENT_ID = "0e3c1ff267e240949fdff12722057eca";
     private static final String REDIRECT_URI = "http://com.example.musicrecommendationapp://callback";
@@ -150,6 +155,38 @@ public class SongDetailActivity extends AppCompatActivity {
 
         super.onStop();
         SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.song_detail, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.action_share:
+                shareSong();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void shareSong(){
+        this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String mood = sharedPreferences.getString("mood", "Happy");
+        if(this.songUri != null){
+            String shareText;
+            shareText = getString(R.string.share_song_text, mood, this.songName, this.songArtist);
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT, shareText);
+            intent.setType("text/plain");
+
+            Intent chooserIntent = Intent.createChooser(intent, null);
+            startActivity(chooserIntent);
+        }
     }
 
     private void onDisconnected(){
