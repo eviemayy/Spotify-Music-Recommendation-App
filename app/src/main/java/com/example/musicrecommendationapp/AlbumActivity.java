@@ -78,10 +78,9 @@ public class AlbumActivity extends AppCompatActivity
             nameList = Arrays.asList(getResources().getStringArray(R.array.happy_albums_names));
         }
         List<AlbumViewModel> simpleViewModelList = new ArrayList<>();
-        //String songName = "    " + getString(R.string.party_song_still_brazy_name);
 
         for (int i = 0; i < newList.size(); i++) {
-            simpleViewModelList.add(new AlbumViewModel(String.format(Locale.US, (String) nameList.get(i)),(String) newList.get(i)));
+            simpleViewModelList.add(new AlbumViewModel(String.format(Locale.US, (String) newList.get(i)),(String) nameList.get(i)));
         }
 
         return simpleViewModelList;
@@ -93,7 +92,8 @@ public class AlbumActivity extends AppCompatActivity
         Log.d("SongActivity", "CLICKED IN ALBUM ACITIVYT!!!!!");
 
         Intent intent = new Intent(this, AlbumDetailActivity.class);
-        intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_DATA, albumUri);
+        intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_URI, albumUri);
+        intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_NAME, albumName);
         startActivity(intent);
     }
 }

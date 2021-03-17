@@ -58,23 +58,13 @@ public class AlbumAdapter extends RecyclerView.Adapter {
     class AlbumItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView simpleTextView;
-        private TextView simpleTextView2;
 
-        private TextView simpleTextView3;
-
-        private TextView simpleTextView4;
-
-        private TextView simpleTextView5;
 
 
 
         public AlbumItemViewHolder(@NonNull View itemView) {
             super(itemView);
             simpleTextView = (TextView) itemView.findViewById(R.id.simple_text);
-            /*(simpleTextView2 = (TextView) itemView.findViewById(R.id.tv_pop);
-            simpleTextView3 = (TextView) itemView.findViewById(R.id.tv_low_temp);
-            simpleTextView4 = (TextView) itemView.findViewById(R.id.tv_high_temp);
-            simpleTextView5 = (TextView) itemView.findViewById(R.id.tv_time);*/
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -90,11 +80,6 @@ public class AlbumAdapter extends RecyclerView.Adapter {
 
         public void bindData(final AlbumViewModel viewModel) {
             simpleTextView.setText(viewModel.getAlbumUri());
-            /*simpleTextView2.setText("asdfg");
-            simpleTextView3.setText("poiut");
-            simpleTextView4.setText("ashh");
-            simpleTextView5.setText("lkjhg");*/
-
         }
 
     }
