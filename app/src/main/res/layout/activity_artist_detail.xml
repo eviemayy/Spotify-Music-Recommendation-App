@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@color/spotify_black"
     tools:context=".AlbumDetailActivity">
 
     <TextView
         android:id="@+id/tv_artist_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
+        android:gravity="center"
         android:layout_marginBottom="8dp"
         android:textAppearance="?attr/textAppearanceHeadline2"
         app:layout_constraintBottom_toTopOf="@id/tv_album_artist"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

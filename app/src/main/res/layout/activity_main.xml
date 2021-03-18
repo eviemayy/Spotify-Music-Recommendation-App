@@ -5,8 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -35,13 +34,19 @@
             android:gravity="center"
             />
 
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:paddingTop="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/moodify_logo" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="50dp"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:text="Go to settings to your right to perform your first search!\n\n\n\nGo to preferences to your left to set what to search by!"
+            android:text="Go to settings in the top right to pick your mood!\n\n\n\nThen go to preferences in the top left to see songs, artists, and albums that align with your mood!"
             android:gravity="center"
             />
 

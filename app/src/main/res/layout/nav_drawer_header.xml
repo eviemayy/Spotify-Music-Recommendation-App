@@ -4,21 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:background="@color/spotify_black"
     android:gravity="bottom">
 
     <ImageView
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:layout_margin="16dp"
         android:paddingTop="30dp"
+        android:layout_marginBottom="17dp"
         android:src="@drawable/moodify_logo" />
 
     <TextView
-        android:paddingTop="50dp"
+        android:paddingTop="20dp"
+        android:textColor="@color/white"
+        android:paddingBottom="10dp"
+        android:textSize="40sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="16dp"
-        android:textAppearance="?attr/textAppearanceHeadline5"
         android:text="@string/app_name"/>
 
 </LinearLayout>
