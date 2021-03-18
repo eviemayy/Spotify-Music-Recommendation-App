@@ -5,19 +5,23 @@ import androidx.lifecycle.ViewModel;
 
 public class ArtistViewModel extends ViewModel {
 
-    private String simpleText;
+    private String artistUri;
+    private String artistName;
 
-    public ArtistViewModel(@NonNull final String simpleText) {
-        setSimpleText(simpleText);
+    public ArtistViewModel(@NonNull final String artistUri, String artistName) {
+        this.artistUri = artistUri;
+        this.artistName = artistName;
     }
 
     @NonNull
-    public String getSimpleText() {
-        return simpleText;
+    public String getArtistUri() {
+        return artistUri;
     }
+    public String getArtistName() { return artistName; }
 
-    public void setSimpleText(@NonNull final String simpleText) {
-        this.simpleText = simpleText;
+    public void setArtistUri(@NonNull final String simpleText) {
+        this.artistUri = simpleText;
     }
+    public void setArtistName(final String name) { this.artistName = name; }
 
 }
