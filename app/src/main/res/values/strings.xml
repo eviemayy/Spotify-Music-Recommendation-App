@@ -38,9 +38,11 @@
 
     <!-- Strings for happy mood songs -->
     <string name="happy_song_happy">spotify:track:60nZcImufyMA1MKQY3dcCH</string>
+    <string name="happy_song_sunshine">spotify:track:05wIrZSwuaVWhcv5FfqeH0</string>
     <string name="happy_song_good_day">spotify:track:4cnqxdE2opmhp7MwkvhkAJ</string>
 
     <string name="happy_song_happy_name">Happy</string>
+    <string name="happy_song_sunshine_name">Walking on Sunshine</string>
     <string name="happy_song_good_day_name">Good Day</string>
 
     <!-- Strings for happy mood artists -->
@@ -62,7 +64,7 @@
     <string name="happy_album_fine_line_name">Fine Line</string>
 
     <!-- Strings for sad mood songs -->
-    <string name="sad_song_circles">spotify:track:08TILUAN56HJoS1d9mNRty</string>
+    <string name="sad_song_circles">spotify:track:4jXl6VtkFFKIt3ycUQc5LT</string>
     <string name="sad_song_funeral">spotify:track:2Tbym0L4Xlox9nol0YzPct</string>
     <string name="sad_song_liability">spotify:track:6Kkt27YmFyIFrcX3QXFi2o</string>
     <string name="sad_song_partys_over">spotify:track:43zdsphuZLzwA9k4DJhU0I</string>
@@ -74,9 +76,11 @@
 
     <!-- Strings for sad mood artists -->
     <string name="sad_artist_pheobe_bridgers">spotify:artist:1r1uxoy19fzMxunt3ONAkG</string>
+    <string name="sad_artist_elliot_smith">spotify:artist:2ApaG60P4r0yhBoDCGD8YG</string>
     <string name="sad_artist_julien_Baker">spotify:artist:12zbUHbPHL5DGuJtiUfsip</string>
 
     <string name="sad_artist_pheobe_bridgers_name">Pheobe Bridgers</string>
+    <string name="sad_artist_elliot_smith_name">Elliot Smith</string>
     <string name="sad_artist_julien_Baker_name">Julien Baker</string>
 
 
@@ -92,11 +96,13 @@
 
     <!-- Strings for party mood songs -->
     <string name="party_song_splashin">spotify:track:3KLo7ByvjCNyBrfz5DZ2mO</string>
+    <string name="party_song_memories">spotify:track:4dTaAiV9xFFCxnPur9c9yL</string>
     <string name="party_song_go_loko">spotify:track:1kK6DwzyXJSp58u5HYWwuD</string>
     <string name="party_song_still_brazy">spotify:track:5Uj2at1EGAaWCrLyEUuXBp</string>
 
 
     <string name="party_song_splashin_name">Splashin</string>
+    <string name="party_song_memories_name">Memories</string>
     <string name="party_song_go_loko_name">Go Loko</string>
     <string name="party_song_still_brazy_name">Still Brazy</string>
 
@@ -140,7 +146,7 @@
     <string name="study_artist_frarnk_ocean_name">Frank Ocean</string>
 
     <!-- Strings for study mood albums -->
-    <string name="study_album_nutcracker">spotify:album:6PpCfTwIhXANaWzK8dDfgU</string>
+    <string name="study_album_nutcracker">spotify:album:54Awn36ryf55PkZyOR4iwQ</string>
     <string name="study_album_classical_study">spotify:album:33eKmf12lj2OUKUM5T97qu</string>
     <string name="study_album_music_for_reading">spotify:album:3NwzUWMi7mR8AySIzIJE1p</string>
 
@@ -150,19 +156,23 @@
 
     <!-- Strings for workout mood songs -->
     <string name="workout_song_new_workout_plan">spotify:track:1Vp4St7JcXaUoJcIahtf3L</string>
+    <string name="workout_song_sandstorm">spotify:track:2lylyZl9S7rbp2FUP5IS0r</string>
     <string name="workout_song_boom_boom_pow">spotify:track:7xRNsqOQOgWbHV1nbXnfXN</string>
     <string name="workout_song_hot_girl_summer">spotify:track:5N1o6d8zGcSZSeMFkOUQOk</string>
 
     <string name="workout_song_new_workout_plan_name">The New Workout Plan</string>
+    <string name="workout_song_sandstorm_name">Sandstorm</string>
     <string name="workout_song_boom_boom_pow_name">Boom Boom Pow</string>
     <string name="workout_song_hot_girl_summer_name">Hot Girl Summer</string>
 
     <!-- Strings for workout mood artists -->
     <string name="workout_artist_black_eyed_peas">spotify:artist:1yxSLGMDHlW21z4YXirZDS</string>
     <string name="workout_artist_megan_thee_stallion">spotify:artist:181bsRPaVXVlUKXrxwZfHK</string>
+    <string name="workout_artist_calvin_harris">spotify:artist:7CajNmpbOovFoOoasH2HaY</string>
 
     <string name="workout_artist_black_eyed_peas_name">Black Eyed Peas</string>
     <string name="workout_artist_megan_thee_stallion_name">Megan Thee Stallion</string>
+    <string name="workout_artist_calvin_harris_name">Calvin Harris</string>
 
     <!-- Strings for workout mood albums -->
     <string name="workout_album_workout_mix">spotify:album:7n8Fbkh4BnzoFsGj74CpzR</string>

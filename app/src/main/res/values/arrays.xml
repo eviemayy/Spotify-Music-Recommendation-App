@@ -20,11 +20,13 @@
     <string-array name="happy_songs">
         <item>@string/happy_song_good_day</item>
         <item>@string/happy_song_happy</item>
+        <item>@string/happy_song_sunshine</item>
     </string-array>
 
     <string-array name="happy_songs_names">
         <item>@string/happy_song_good_day_name</item>
         <item>@string/happy_song_happy_name</item>
+        <item>@string/happy_song_sunshine_name</item>
     </string-array>
 
     <!-- Array for happy mood artists -->
@@ -71,11 +73,13 @@
     <!-- Array for sad mood artists -->
     <string-array name="sad_artists">
         <item>@string/sad_artist_julien_Baker</item>
+        <item>@string/sad_artist_elliot_smith</item>
         <item>@string/sad_artist_pheobe_bridgers</item>
     </string-array>
 
     <string-array name="sad_artists_names">
         <item>@string/sad_artist_julien_Baker_name</item>
+        <item>@string/sad_artist_elliot_smith_name</item>
         <item>@string/sad_artist_pheobe_bridgers_name</item>
     </string-array>
 
@@ -95,12 +99,14 @@
     <!-- Array for party mood songs -->
     <string-array name="party_songs">
         <item>@string/party_song_go_loko</item>
+        <item>@string/party_song_memories</item>
         <item>@string/party_song_splashin</item>
         <item>@string/party_song_still_brazy</item>
     </string-array>
 
     <string-array name="party_songs_names">
         <item>@string/party_song_go_loko_name</item>
+        <item>@string/party_song_memories_name</item>
         <item>@string/party_song_splashin_name</item>
         <item>@string/party_song_still_brazy_name</item>
     </string-array>
@@ -178,12 +184,14 @@
     <!-- Array for workout mood songs -->
     <string-array name="workout_songs">
         <item>@string/workout_song_boom_boom_pow</item>
+        <item>@string/workout_song_sandstorm</item>
         <item>@string/workout_song_hot_girl_summer</item>
         <item>@string/workout_song_new_workout_plan</item>
     </string-array>
 
     <string-array name="workout_songs_names">
         <item>@string/workout_song_boom_boom_pow_name</item>
+        <item>@string/workout_song_sandstorm_name</item>
         <item>@string/workout_song_hot_girl_summer_name</item>
         <item>@string/workout_song_new_workout_plan_name</item>
     </string-array>
@@ -192,11 +200,13 @@
     <string-array name="workout_artists">
         <item>@string/workout_artist_megan_thee_stallion</item>
         <item>@string/workout_artist_black_eyed_peas</item>
+        <item>@string/workout_artist_calvin_harris</item>
     </string-array>
 
     <string-array name="workout_artists_names">
         <item>@string/workout_artist_megan_thee_stallion_name</item>
         <item>@string/workout_artist_black_eyed_peas_name</item>
+        <item>@string/workout_artist_calvin_harris_name</item>
     </string-array>
 
     <!-- Array for workout mood albums -->
